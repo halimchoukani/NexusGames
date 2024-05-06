@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #282828;
+  color: #fff8e7;
+  width: 100vw;
+}
+header {
+  background-color: #232323;
+  color: #fff8e7;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  flex-direction: col;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff8e7;
+  padding: 35px;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+header nav ul li a:hover {
+  color: #f0c929;
+}
+
+header nav .nav-logo img {
+  width: 35px;
+}
+
+header nav .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+header .logo img {
+  width: 90px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+}
+main .main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.main-header .card {
+  background-image: url("mouse.png");
+  color: #fff8e7;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  box-shadow: inset rgb(0, 0, 0) -4px -140px 100px 50px;
+  gap: 10px;
+}
+
+.main-header .card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-header .card p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.main-header .card button {
+  background-color: #f0c929;
+  color: #282828;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.main-header .card button:hover {
+  background-color: #282828;
+  color: #f0c929;
+}

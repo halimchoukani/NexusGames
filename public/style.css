@@ -89,7 +89,7 @@ main .main-header {
 }
 
 .main-header .card {
-  background-image: url("mouse.png");
+  background-image: url("./assets/mouse.png");
   color: #fff8e7;
   padding: 20px;
   border-radius: 10px;
@@ -148,7 +148,7 @@ main .shop-cat .title h3 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-image: url("Rectangle 4.png");
+  background-image: url("./assets/Rectangle 4.png");
   padding: 20px;
   background-size: contain;
   background-repeat: no-repeat;

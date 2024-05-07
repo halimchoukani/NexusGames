@@ -9,7 +9,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CartController extends AbstractController
 {
-    #[Route('/cart', name: 'app_cart')]
+    /**
+     * @Route("/cart", name="app_cart")
+     */
     public function index(Request $request): Response
     {
         $session = $request->getSession();
@@ -25,7 +27,9 @@ class CartController extends AbstractController
             $panierData
         ]);
     }
-    #[Route('/add', name: 'add_cart')]
+    /**
+     * @Route("/add", name="add_cart")
+     */
     public function add($id, Request $request)
     {
         $session = $request->getSession();

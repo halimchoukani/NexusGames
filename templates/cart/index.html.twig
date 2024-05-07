@@ -10,5 +10,42 @@
 
 <div class="example-wrapper">
     <h1>Your Cart</h1>
+    <hr>
+    <div class="container">
+    {% if items | length %}
+    <table class="table">
+    <thead>
+    <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Quantité</th>
+    <th>Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in items %}
+    <tr>
+    <td>{{ item.id }}</td>
+    <td>---</td>
+    <td>{{ item.quantity }}</td>
+    <td>---</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+    <tr>
+    <td colspan="3" class="text-right">Total:</td>
+    <td>---</td>
+    <td></td>
+    </tr>
+    </tfoot>
+    </table>
+    {% else %}
+    <p>Panier vide !</p>
+    {% endif %}
+    </div>
+    <hr>
+    <p><a href="/" >Home</a></p>
+
 </div>
 {% endblock %}

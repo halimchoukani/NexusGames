@@ -13,6 +13,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
 header {
   background-color: #232323;
   color: #fff8e7;
@@ -24,6 +25,7 @@ header {
   justify-content: space-between;
   padding: 25px;
 }
+
 header nav {
   display: flex;
   align-items: center;
@@ -47,6 +49,7 @@ header nav ul li a {
   transition: 0.5s;
   text-transform: uppercase;
 }
+
 header nav ul li a:hover {
   color: #f0c929;
 }
@@ -67,6 +70,7 @@ header .logo {
   font-weight: bold;
   padding: 1rem;
 }
+
 header .logo img {
   width: 90px;
 }
@@ -79,6 +83,7 @@ main {
   gap: 20px;
   padding: 25px;
 }
+
 main .main-header {
   display: flex;
   flex-direction: row;
@@ -108,10 +113,12 @@ main .main-header {
   font-size: 2rem;
   font-weight: bold;
 }
+
 .main-header .card p {
   font-size: 1rem;
   font-weight: 300;
 }
+
 .main-header .card button {
   background-color: #f0c929;
   color: #282828;
@@ -123,6 +130,7 @@ main .main-header {
   cursor: pointer;
   transition: 0.5s;
 }
+
 .main-header .card button:hover {
   background-color: #282828;
   color: #f0c929;
@@ -154,6 +162,7 @@ main .shop-cat .title h3 {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .items-list {
   width: 100%;
   display: flex;
@@ -162,6 +171,7 @@ main .shop-cat .title h3 {
   justify-content: space-evenly;
   gap: 20px;
 }
+
 .item {
   position: relative;
   border-radius: 10px;
@@ -180,12 +190,15 @@ main .shop-cat .title h3 {
   transform: scale(1.01);
   cursor: pointer;
 }
+
 .item:hover .desc {
   box-shadow: inset rgb(0, 0, 0) -4px -1px 100px 50px;
 }
+
 .item:hover .image {
   opacity: 0.5;
 }
+
 .item .image {
   width: 100%;
   height: 100%;
@@ -208,6 +221,7 @@ main .shop-cat .title h3 {
   justify-content: flex-end;
   transition: 0.5s;
 }
+
 .teams-list {
   width: 100%;
   display: flex;
@@ -216,6 +230,7 @@ main .shop-cat .title h3 {
   justify-content: center;
   gap: 20px;
 }
+
 .team {
   position: relative;
   border-radius: 10px;
@@ -227,10 +242,12 @@ main .shop-cat .title h3 {
   overflow: hidden;
   transition: 0.5s;
 }
+
 .team:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
+
 footer {
   background-color: #232323;
   color: #fff8e7;

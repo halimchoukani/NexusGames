@@ -24,6 +24,7 @@ class CartController extends AbstractController
             ];
         }
         return $this->render('cart/index.html.twig', [
+            'items' =>
             $panierData
         ]);
     }
@@ -39,6 +40,6 @@ class CartController extends AbstractController
         else
             $panier[$id] = 1;
         $session->set('panier', $panier);
-        return $this->redirectToRoute('cart');
+        return $this->redirectToRoute('app_cart');
     }
 }

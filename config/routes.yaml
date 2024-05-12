@@ -1,12 +1,19 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
 
 app_cart:
-    path: /cart
-    controller: App\Controller\CartController::index
+  path: /cart
+  controller: App\Controller\CartController::index
 add_cart:
-    path: /add/{id}
-    controller: App\Controller\CartController::add
+  path: /add/{id}
+  controller: App\Controller\CartController::add
+get_product:
+  path: /product/{id}
+  controller: App\Controller\ProductController::show
+
+get_products:
+  path: /products
+  controller: App\Controller\ProductController::index

@@ -1,51 +1,50 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello CartController!{% endblock %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="card.css" />
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="contrainer">
+        
+        <div class="table-container">
+            {% if items | length %}
+            <h1>Your Cart</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>---</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>---</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-right">Total:</td>
+                        <td>---</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
 
-<div class="example-wrapper">
-    <h1>Your Cart</h1>
-    <hr>
-    <div class="container">
-    {% if items | length %}
-    <table class="table">
-    <thead>
-    <tr>
-    <th>Id</th>
-    <th>Nom</th>
-    <th>Quantité</th>
-    <th>Prix</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for item in items %}
-    <tr>
-    <td>{{ item.id }}</td>
-    <td>---</td>
-    <td>{{ item.quantity }}</td>
-    <td>---</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-    <tfoot>
-    <tr>
-    <td colspan="3" class="text-right">Total:</td>
-    <td>---</td>
-    <td></td>
-    </tr>
-    </tfoot>
-    </table>
-    {% else %}
-    <p>Panier vide !</p>
-    {% endif %}
+            </table>
+            <p class="home-link"><a href="/" >Home</a></p>
+            {% else %}
+            <p class="empty">Your cart is empty !</p>
+            <p class="home-link"><a href="/products" >SEE OUR PRODUCT ?</a></p>
+            {% endif %}
+        </div>
+        
     </div>
-    <hr>
-    <p><a href="/" >Home</a></p>
-
-</div>
 {% endblock %}

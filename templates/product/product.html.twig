@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Our products{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/style.css" />
+{% endblock %}
+{% block body %}
+<header>
+    <div class="logo">
+        <a href="/"><img src="/assets/Group 4.png" alt="" /></a>
+    </div>
+    <nav>
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/products">all product</a></li>
+        <li><a href="/products/new">new releases</a></li>
+        <li><a href="/about">about us</a></li>
+    </ul>
+    <div class="nav-logo">
+        <a href="/login"><img src="/assets/user.png" alt="" /></a>
+        <img src="/assets/grocery-store.png" alt="" />
+    </div>
+    </nav>
+</header>
+<main>
+    <div class="productcontainer">
+        <div class="image">
+            <img src="/uploads/{{product.image}}" alt="produit" />
+        </div>
+        <div class="info" >
+            <h1> {{product.nom}} </h1>
+            <h3> {{product.prix}}$ </h3>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</main>
+<footer>
+    <h2>@Copyright Halim Choukani L2 DSI 3</h2>
+</footer>
+{% endblock %}

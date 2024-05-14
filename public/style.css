@@ -270,10 +270,57 @@ footer {
 
 .productcontainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
   width: 100%;
-  background: #000;
+}
+
+.productcontainer .image {
+  width: 50%;
+  overflow: hidden;
+  align-items: center;
+}
+
+.productcontainer .image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  aspect-ratio: 4/3;
+}
+
+
+.productcontainer .info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 50%;
+  gap: 10px;
+  height: 100%;
+}
+
+.info .desc {
+  max-width: 75%;
+}
+
+.info a {
+  background-color: #f0c929;
+  color: #282828;
+  padding: 10px 20px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.info a:hover {
+  background-color: #444444;
+  color: #f0c929;
 }

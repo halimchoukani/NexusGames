@@ -30,8 +30,9 @@
         <div class="info" >
             <h1> {{product.nom}} </h1>
             <h3> {{product.prix}}$ </h3>
-            <p></p>
-            <p></p>
+            <p class="desc" > {{product.description}} </p>
+            <p class="qte" > {{product.quantite}} </p>
+            <a href="/add/{{product.id}}"> Add to cart </a>
         </div>
     </div>
 </main>

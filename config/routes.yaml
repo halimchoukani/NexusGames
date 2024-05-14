@@ -10,10 +10,14 @@ app_cart:
 add_cart:
   path: /add/{id}
   controller: App\Controller\CartController::add
-get_product:
-  path: /product/{id}
+app_produit_show:
+  path: /product/show/{id}
   controller: App\Controller\ProductController::show
 
-get_products:
+app_produits:
   path: /products
   controller: App\Controller\ProductController::index
+
+app_produit_ajouter:
+  path: /product/add
+  controller: App\Controller\ProductController::ajouter

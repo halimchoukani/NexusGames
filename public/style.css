@@ -164,19 +164,21 @@ main .shop-cat .title h3 {
 }
 
 .items-list {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: flex-start;
+  margin: auto;
   gap: 20px;
 }
 
 .item {
   position: relative;
   border-radius: 10px;
-  width: 35 0px;
-  height: 500px;
+  width: 350px;
+  height: 300px;
   display: flex;
   flex-direction: column-reverse;
   align-items: start;
@@ -206,15 +208,20 @@ main .shop-cat .title h3 {
   transition: 0.5s;
 }
 
+#item_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .item .desc {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1rem;
   color: #fff8e7;
   padding: 20px;
-  box-shadow: inset rgb(0, 0, 0) -4px -140px 100px 50px;
+  box-shadow: inset rgba(0, 0, 0, 0.815) 0px -50px 100px 40px;
   display: flex;
   flex-direction: column;
   align-items: start;

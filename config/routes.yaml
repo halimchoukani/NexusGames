@@ -23,5 +23,21 @@ app_produit_ajouter:
   controller: App\Controller\ProductController::ajouter
 
 app_product_mouse:
-  path: /products/mouse
+  path: /products/mouses
   controller: App\Controller\ProductController::showMouses
+
+app_product_keyboard:
+  path: /products/keyboards
+  controller: App\Controller\ProductController::showKeyboards
+
+app_product_headset:
+  path: /products/headsets
+  controller: App\Controller\ProductController::showHeadsets
+
+app_product_mousepad:
+  path: /products/mousepads
+  controller: App\Controller\ProductController::showMousepads
+
+app_product_screen:
+  path: /products/screens
+  controller: App\Controller\ProductController::showScreens

@@ -13,7 +13,6 @@
             <ul>
                 <li><a href="/">home</a></li>
                 <li><a href="/products">all product</a></li>
-                <li><a href="/products/new">new releases</a></li>
                 <li><a href="/about">about us</a></li>
             </ul>
             <div class="nav-logo">
@@ -21,18 +20,19 @@
                 <img src="assets/grocery-store.png" alt="" />
             </div>
             </nav>
-        </header>
+  </header>
   <main>
     <div class="main-header">
-      <div class="card">
-        <h3>Mouse</h3>
+      <div class="card mouses">
+        <h3>Mouses</h3>
         <p>Most used by ESports teams</p>
-        <button>See More</button>
+        <a href="/products/mouses"><button>See More</button></a>
       </div>
-      <div class="card">
+      <div class="card keyboards">
         <h3>Keyboards</h3>
         <p>Most used by ESports teams</p>
-        <button>See More</button>
+        <a href="/products/keyboards  "><button>See More</button></a>
+
       </div>
     </div>
     <div class="shop-cat">
@@ -40,36 +40,31 @@
         <h3>Shop By Categorie</h3>
       </div>
       <div class="items-list">
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
+        <a href="/products/mouses">
+          <div class="item mouses">
+            <div class="desc"><h3>Mouses</h3></div>
           </div>
-          <div class="desc"><h3>Mouse</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
+        </a>
+        <a href="/products/keyboards">
+          <div class="item keyboards">
+            <div class="desc"><h3>Keyboards</h3></div>
           </div>
-          <div class="desc"><h3>Mouse</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
+        </a>
+        <a href="/products/headsets">
+          <div class="item headsets">
+            <div class="desc"><h3>Headsets</h3></div>
           </div>
-          <div class="desc"><h3>Keyboard</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
+        </a>
+        <a href="/products/screens">
+          <div class="item screens">
+            <div class="desc"><h3>Screens</h3></div>
           </div>
-          <div class="desc"><h3>Headset</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
+        </a>
+        <a href="/products/mousepads">
+          <div class="item mousepads">
+            <div class="desc"><h3>Mouse Pads</h3></div>
           </div>
-          <div class="desc"><h3>Mouse Pad</h3></div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="shop-cat">
@@ -77,30 +72,20 @@
         <h3>New Product</h3>
       </div>
       <div class="items-list">
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
-          </div>
-          <div class="desc"><h3>Mouse</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
-          </div>
-          <div class="desc"><h3>Keyboard</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
-          </div>
-          <div class="desc"><h3>Headset</h3></div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/mouse.png" alt="" />
-          </div>
-          <div class="desc"><h3>Mouse Pad</h3></div>
-        </div>
+        {% if( products is empty ) %}
+            <h1>No products found</h1>
+        {% else %}
+            {% for product in products %}
+                <a href ="/product/show/{{product.id}}">
+                    <div class="item">
+                        <div class="image">
+                            <img src="/uploads/{{product.image}}" alt="hello" id="item_img" />
+                        </div>
+                        <div class="desc"><h3>{{product.nom}}</h3> <p>${{product.prix}}</p></div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
       </div>
     </div>
     <div class="shop-cat">

@@ -28,6 +28,7 @@ class ProductController extends AbstractController
         return $this->render('product/index.html.twig', [
             'products' => $produits,
             'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'All Products',
         ]);
     }
 
@@ -43,6 +44,7 @@ class ProductController extends AbstractController
         return $this->render('product/product.html.twig', [
             'product' => $product,
             'image_directory' => $this->getParameter('images_directory'),
+
         ]);
     }
 
@@ -54,6 +56,7 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $produit = $form->getData();
+            $produit->setDateInsertion(new \DateTime());
             //****************Manage Uploaded FileName
             $photo_prod = $form->get('image')->getData();
             $originalFilename = $photo_prod->getClientOriginalName();
@@ -68,24 +71,57 @@ class ProductController extends AbstractController
         return $this->render('product/ajouter.html.twig', ['form' => $form->createView(),]);
     }
 
-    #[Route('/products/mouse', name: 'app_product_mouse')]
+    #[Route('/products/mouses', name: 'app_product_mouse')]
     public function showMouses(ProductRepository $productRepository): Response
     {
         $produits = $productRepository->findBy(['categorie' => 'mouse']);
         return $this->render('product/index.html.twig', [
             'products' => $produits,
             'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'Mouses',
         ]);
     }
 
-    #[Route('/products/keyboard', name: 'app_product_keyboard')]
+    #[Route('/products/keyboards', name: 'app_product_keyboard')]
     public function showKeyboards(ProductRepository $productRepository): Response
     {
         $produits = $productRepository->findBy(['categorie' => 'keyboard']);
         return $this->render('product/index.html.twig', [
             'products' => $produits,
             'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'Keyboards',
         ]);
     }
-    
+
+    #[Route('/products/headsets', name: 'app_product_headset')]
+    public function showHeadsets(ProductRepository $productRepository): Response
+    {
+        $produits = $productRepository->findBy(['categorie' => 'headset']);
+        return $this->render('product/index.html.twig', [
+            'products' => $produits,
+            'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'Headsets',
+        ]);
+    }
+    #[Route('/products/mousepads', name: 'app_product_mousepad')]
+    public function showMousepads(ProductRepository $productRepository): Response
+    {
+        $produits = $productRepository->findBy(['categorie' => 'mousepad']);
+        return $this->render('product/index.html.twig', [
+            'products' => $produits,
+            'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'Mousepads',
+        ]);
+    }
+    #[Route('/products/screens', name: 'app_product_screen')]
+    public function showScreens(ProductRepository $productRepository): Response
+    {
+        $produits = $productRepository->findBy(['categorie' => 'screen']);
+        return $this->render('product/index.html.twig', [
+            'products' => $produits,
+            'image_directory' => $this->getParameter('images_directory'),
+            'title' => 'Screens',
+        ]);
+    }
+
 }

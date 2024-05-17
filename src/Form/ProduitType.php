@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotNull;
@@ -23,7 +24,7 @@ class ProduitType extends AbstractType
         $builder
             ->add('nom')
             ->add('marque')
-            ->add('description')
+            ->add('description',TextareaType::class)
             ->add('prix', MoneyType::class)
             ->add('categorie', ChoiceType::class, [
                 'choices' => [
@@ -53,7 +54,6 @@ class ProduitType extends AbstractType
                     ])
                 ]
             )
-            ->add('date_insertion', DateType::class)
             ->add('ajouter', SubmitType::class);
     }
 

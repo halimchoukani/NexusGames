@@ -31,7 +31,14 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
+    public function findNewProducts(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.date_insertion', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult();
+    }
     public function getById($id): ?Product
     {
         return $this->createQueryBuilder('p')

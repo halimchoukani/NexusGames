@@ -128,3 +128,12 @@ button:hover {
   gap: 10px;
   margin-bottom: 20px;
 }
+.link {
+  text-align: center;
+  margin-top: 20px;
+}
+.link a {
+  color: #fff8e7;
+  text-decoration: none;
+  transition: 0.5s;
+}

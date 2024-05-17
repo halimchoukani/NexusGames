@@ -38,6 +38,26 @@
             {% endif %}
         </div>
     </div>
+    <div class="title">
+        <h3>Same Marque</h3>
+    </div>
+    <div class="items-list">
+    
+        {% if( products is empty ) %}
+            <h1>No products found</h1>
+        {% else %}
+            {% for product in products %}
+                <a href ="/product/show/{{product.id}}">
+                    <div class="item">
+                        <div class="image">
+                            <img src="/uploads/{{product.image}}" alt="hello" id="item_img" />
+                        </div>
+                        <div class="desc"><h3>{{product.nom}}</h3> <p>${{product.prix}}</p></div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
 </main>
 <footer>
     <h2>@Copyright Halim Choukani L2 DSI 3</h2>

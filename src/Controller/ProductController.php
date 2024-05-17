@@ -36,6 +36,7 @@ class ProductController extends AbstractController
     public function show($id, ProductRepository $productRepository): Response
     {
         $product = $productRepository->find($id);
+        $products = $productRepository->getByMarque($product->getMarque());
 
         if (!$product) {
             throw $this->createNotFoundException('Product not found');
@@ -44,7 +45,7 @@ class ProductController extends AbstractController
         return $this->render('product/product.html.twig', [
             'product' => $product,
             'image_directory' => $this->getParameter('images_directory'),
-
+            'products' => $products,
         ]);
     }
 

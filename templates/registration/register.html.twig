@@ -7,6 +7,9 @@
 {% endblock %}
 
 {% block body %}
+<div class="logo">
+        <img src="../assets/Group 4.png" alt="" />
+</div>
     {{ form_start(registrationForm) }}
         <h1>Register</h1>
         {{ form_errors(registrationForm) }}
@@ -22,5 +25,8 @@
     
 
         <button type="submit" class="btn">Register</button>
+        <div class="link">
+        <a href="{{ path('app_login') }}">Login</a>
+    </div>
     {{ form_end(registrationForm) }}
 {% endblock %}

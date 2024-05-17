@@ -67,6 +67,13 @@ class ProductRepository extends ServiceEntityRepository
         $this->entityManager->flush();
     }
 
-
+    public function getByMarque($marque): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.marque = :val')
+            ->setParameter('val', $marque)
+            ->getQuery()
+            ->getResult();
+    }
 
 }

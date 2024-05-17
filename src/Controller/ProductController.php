@@ -57,7 +57,7 @@ class ProductController extends AbstractController
             //****************Manage Uploaded FileName
             $photo_prod = $form->get('image')->getData();
             $originalFilename = $photo_prod->getClientOriginalName();
-            $newFilename = $originalFilename . '-' . uniqid() . '.' . $photo_prod->getClientOriginalExtension();
+            $newFilename = uniqid() . '.' . $photo_prod->getClientOriginalExtension();
             $photo_prod->move($this->getParameter('images_directory'), $newFilename);
             $produit->setImage($newFilename);
             //****************
@@ -67,4 +67,25 @@ class ProductController extends AbstractController
         }
         return $this->render('product/ajouter.html.twig', ['form' => $form->createView(),]);
     }
+
+    #[Route('/products/mouse', name: 'app_product_mouse')]
+    public function showMouses(ProductRepository $productRepository): Response
+    {
+        $produits = $productRepository->findBy(['categorie' => 'mouse']);
+        return $this->render('product/index.html.twig', [
+            'products' => $produits,
+            'image_directory' => $this->getParameter('images_directory'),
+        ]);
+    }
+
+    #[Route('/products/keyboard', name: 'app_product_keyboard')]
+    public function showKeyboards(ProductRepository $productRepository): Response
+    {
+        $produits = $productRepository->findBy(['categorie' => 'keyboard']);
+        return $this->render('product/index.html.twig', [
+            'products' => $produits,
+            'image_directory' => $this->getParameter('images_directory'),
+        ]);
+    }
+    
 }

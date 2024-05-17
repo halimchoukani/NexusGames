@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotNull;
@@ -24,6 +25,16 @@ class ProduitType extends AbstractType
             ->add('marque')
             ->add('description')
             ->add('prix', MoneyType::class)
+            ->add('categorie', ChoiceType::class, [
+                'choices' => [
+                    'Mouse' => 'mouse',
+                    'Keyboard' => 'keyboard',
+                    'Screen' => 'screen',
+                    'Headset' => 'headset',
+                    'Mousepad' => 'mousepad',
+                ],
+                'placeholder' => 'Choose a category',
+            ])
             ->add('quantite', null, [
                 'attr' => [
                     'min' => 0,

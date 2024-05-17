@@ -21,3 +21,7 @@ app_produits:
 app_produit_ajouter:
   path: /product/add
   controller: App\Controller\ProductController::ajouter
+
+app_product_mouse:
+  path: /products/mouse
+  controller: App\Controller\ProductController::showMouses

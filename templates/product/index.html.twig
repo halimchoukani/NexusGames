@@ -2,12 +2,12 @@
 
 {% block title %}Our products{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
 {% endblock %}
 {% block body %}
 <header>
     <div class="logo">
-        <a href="/"><img src="assets/Group 4.png" alt="" /></a>
+        <a href="/"><img src="/assets/Group 4.png" alt="" /></a>
     </div>
     <nav>
     <ul>
@@ -17,8 +17,8 @@
         <li><a href="/about">about us</a></li>
     </ul>
     <div class="nav-logo">
-        <a href="/login"><img src="assets/user.png" alt="" /></a>
-        <img src="assets/grocery-store.png" alt="" />
+        <a href="/login"><img src="/assets/user.png" alt="" /></a>
+        <img src="/assets/grocery-store.png" alt="" />
     </div>
     </nav>
 </header>
@@ -32,12 +32,14 @@
             <h1>No products found</h1>
         {% else %}
             {% for product in products %}
-                <div class="item">
-                    <div class="image">
-                        <img src="uploads/{{product.image}}" alt="hello" id="item_img" />
+                <a href ="/product/show/{{product.id}}">
+                    <div class="item">
+                        <div class="image">
+                            <img src="/uploads/{{product.image}}" alt="hello" id="item_img" />
+                        </div>
+                        <div class="desc"><h3>{{product.nom}}</h3> <p>${{product.prix}}</p></div>
                     </div>
-                    <div class="desc"><h3>{{product.nom}}</h3></div>
-                </div>
+                </a>
             {% endfor %}
         {% endif %}
     </div>

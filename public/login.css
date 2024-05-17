@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url("https://account.eslgaming.com/assets/static/images/66abccc09dcdc66bbef3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff8e7;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  position: absolute;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form h1 {
+  text-align: center;
+  color: #fff8e7;
+  margin-bottom: 20px;
+}
+
+form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form .input label {
+  color: #fff8e7;
+  transition: 0.5s;
+}
+
+form .input input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  outline: none;
+  color: #fff8e7;
+  font-size: 18px;
+  border: 1px solid #fff8e7;
+  border-radius: 15px;
+}
+
+form .input input:focus {
+  outline: 2px solid #fff8e7;
+}
+
+form .input input:valid {
+  outline: 2px solid #fff8e7;
+}
+
+.logo {
+  z-index: 10000;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.logo img {
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+}
+
+.remember label {
+  color: #fff8e7;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #fff8e7;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 18px;
+  border: 1px solid #fff8e7;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: transparent;
+  color: #fff8e7;
+}

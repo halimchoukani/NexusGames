@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @extends ServiceEntityRepository<Product>
@@ -16,9 +17,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProductRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private $entityManager;
+    public function __construct(ManagerRegistry $registry , EntityManagerInterface $entityManager)
     {
         parent::__construct($registry, Product::class);
+        $this->entityManager = $entityManager;
     }
 
     //    /**
@@ -47,4 +50,23 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+    public function editQuantitie($id, $quantity): void
+    {
+        $product = $this->find($id);
+        if ($product === null) {
+            throw new \Exception('Product not found.');
+        }
+
+        $currentQuantity = $product->getQuantite    ();
+        if ($currentQuantity < $quantity) {
+            throw new \Exception('Insufficient product quantity.');
+        }
+
+        $product->setQuantite($currentQuantity - $quantity);
+        $this->entityManager->persist($product);
+        $this->entityManager->flush();
+    }
+
+
+
 }

@@ -17,8 +17,8 @@
                 <li><a href="/about">about us</a></li>
             </ul>
             <div class="nav-logo">
-                <a href="/login"><img src="assets/user.png" alt="" /></a>
-                <img src="assets/grocery-store.png" alt="" />
+                <a href="{{ path('app_logout') }}"><img src="assets/user.png" alt="" /></a>
+                <a href="{{ path('app_cart') }}"><img src="assets/grocery-store.png" alt="" /></a>
             </div>
             </nav>
     </header>
@@ -39,22 +39,22 @@
                     {% for item in items %}
                         <tr>
                             <td>{{ item.id }}</td>
-                            <td>---</td>
+                            <td>{{item.product.nom}}</td>
                             <td>{{ item.quantity }}</td>
-                            <td>---</td>
+                            <td>${{item.product.prix}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="3" class="text-right">Total:</td>
-                        <td>---</td>
+                        <td>${{total}}</td>
                         <td></td>
                     </tr>
                 </tfoot>
 
             </table>
-            <p class="home-link"><a href="/" >Home</a></p>
+            <p class="home-link"><a href="/buy" >Buy Now -></a></p>
             {% else %}
             <p class="empty">Your cart is empty !</p>
             <p class="home-link"><a href="/products" >SEE OUR PRODUCT ?</a></p>

@@ -16,17 +16,21 @@
         <li><a href="/about">about us</a></li>
     </ul>
     <div class="nav-logo">
-        <a href="/login"><img src="/assets/user.png" alt="" /></a>
-        <img src="/assets/grocery-store.png" alt="" />
+        <a href="{{ path('app_logout') }}"><img src="/assets/user.png" alt="" /></a>
+        <a href="{{ path('app_cart') }}"><img src="/assets/grocery-store.png" alt="" /></a>
     </div>
     </nav>
 </header>
 <main>
 <div class="shop-cat">
+    <a href="{{ path('app_produit_ajouter') }}">
+        <button>Add Product</button>
+    </a>
     <div class="title">
         <h3>{{title}}</h3>
     </div>
     <div class="items-list">
+    
         {% if( products is empty ) %}
             <h1>No products found</h1>
         {% else %}

@@ -148,7 +148,7 @@ main .main-header {
   font-weight: 300;
 }
 
-.main-header .card button {
+button {
   background-color: #f0c929;
   color: #282828;
   padding: 10px 20px;
@@ -160,8 +160,8 @@ main .main-header {
   transition: 0.5s;
 }
 
-.main-header .card button:hover {
-  background-color: #282828;
+button:hover {
+  background-color: #181818;
   color: #f0c929;
 }
 
@@ -178,7 +178,9 @@ main .shop-cat .title h3 {
   font-size: 26px;
   font-weight: bold;
 }
-
+.red {
+  color: red;
+}
 .title {
   color: #1d1d1d;
   display: flex;

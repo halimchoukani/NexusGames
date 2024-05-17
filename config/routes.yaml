@@ -41,3 +41,7 @@ app_product_mousepad:
 app_product_screen:
   path: /products/screens
   controller: App\Controller\ProductController::showScreens
+
+buy_cart:
+  path: /buy
+  controller: App\Controller\CartController::buy

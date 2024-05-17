@@ -37,19 +37,19 @@ form h1 {
   margin-bottom: 20px;
 }
 
-form .input {
+form div {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 30px;
 }
 
-form .input label {
+form div label {
   color: #fff8e7;
   transition: 0.5s;
 }
 
-form .input input {
+form div input {
   width: 100%;
   padding: 10px;
   background: rgba(0, 0, 0, 0.7);
@@ -85,7 +85,9 @@ form .input input:valid {
 }
 .remember {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -117,4 +119,12 @@ button {
 button:hover {
   background: transparent;
   color: #fff8e7;
+}
+.remember div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
 }

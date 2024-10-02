@@ -7,9 +7,8 @@
 <a href="#contribute">Contribute</a> 
 </p>
 
-
 <p align="center">A market place for e-sport's peripherals .</p>
-
+<img src="https://github.com/halimchoukani/NexusGames/blob/main/image_2024-10-02_163554684.png"/>
 
 
 <h2 id="technologies">💻 Technologies</h2>
